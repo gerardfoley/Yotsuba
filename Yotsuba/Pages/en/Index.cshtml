@@ -1,0 +1,166 @@
+﻿@page
+@model Yotsuba.Pages.EN.IndexModel
+
+<style>
+
+    .grid {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 20px;
+        margin: 10px;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 0 10px black;
+    }
+
+</style>
+
+<img src="/images/header2.jpg" class="rounded-25 w-100" />
+
+<div class="alert alert-dark" role="alert" style="margin-top: 1em;">
+    The next meetup is @NextSunday().ToString("dddd, d MMMM"), in Starbucks Crampton Quay.
+</div>
+
+<div class="row">
+
+    <div class="col grid" style="background: #ccffcc;">
+
+        <img src="/images/sunday calendar.png" width="50" height="50" />
+
+        <div>Every Sunday</div>
+    
+    </div>
+
+    <div class="col grid" style="background: #99ff99;">
+
+        <img src="/images/starbucks_corporation_logo_2011.svg" width="50" height="50" />
+
+        <div>Starbucks, Crampton Quay
+            <a href="https://www.google.com/maps/place/Starbucks+Crampton+Quay/@@53.346055,-6.2623945,15z/data=!4m6!3m5!1s0x48670e8412f2ca57:0x54821689825953e9!8m2!3d53.346055!4d-6.2623945!16s%2Fg%2F11btvb535v" target="_blank">View map</a>
+        </div>
+
+    </div>
+
+    <div class="col grid" style="background: #66ff66;">
+
+        <div style="display: inline-block; width: 50px; height: 50px; border-radius: 50px; background: white;">
+            <img src="/images/clock_12-30.svg" width="50" height="50" />
+        </div>
+        
+        <div>From 12:30</div>
+
+    </div>
+
+</div>
+
+<h1>About us</h1>
+
+<img src="/images/yotsuba-san.jpg" style="float: right;" width="200" />
+
+<p style="font-size: 20px;">
+    We are a friendly Japanese language and culture meetup held every week in Starbucks, Dublin.
+    Feel free to come along at any time that suits and pull up a chair. 
+    You can practice your Japanese with native speakers, exchange cultures or geek out about otaku topics.
+    No Japanese speaking ability necessary.
+</p>
+
+<h2>Activities</h2>
+<p style="font-size: 20px;">
+    Normally there are games and activities at the meetup to try.
+    These include Scrabble cards, Exploding Kittens (with English and Japanse language cards), flashcards, origami, manga, and books on the table you can use.
+    Feel free to bring your own games and activities if you have them.
+</p>
+
+<img src="/images/12-chureito-pagoda-and-mount-fuji-japan_(29677439878).jpg" alt="Chureito Pagoda and Mount Fuji, Japan" class="w-100 rounded-25" />
+
+<div class="row" style="margin-top: 1em;">
+    <div class="col-md-6 col-lg-3">
+        <img src="/images/Pika-ditto and Eevee in front of Pokéball.jpg" alt="Pika-ditto and Eevee in front of a Pokéball" class="rounded-25 w-100" />
+    </div>
+    <div class="col-md-6 col-lg-9">
+        <h1>FAQs</h1>
+        <dl>
+            <dt>
+                How do I find the group?
+            </dt>
+            <dd>
+                We are downstairs in Starbucks, Crampton Quay. Look for the table with the Yotsuba sign and Pokémon plush.
+            </dd>
+            <dt>
+                Do I need to show up at exactly 12:30?
+            </dt>
+            <dd>
+                You can come along any time, but during busy weeks you might not get a seat if you come along late, so you will need to stand.
+            </dd>
+            <dt>
+                Do I need to register?
+            </dt>
+            <dd>
+                No, there is no need to pre-register, just come along at any time.
+            </dd>
+            <dt>
+                I can't speek Japanese, can I still come?
+            </dt>
+            <dd>
+                Yes, we get people of all levels.
+            </dd>
+            <dt>
+                How many people come every week?
+            </dt>
+            <dd>
+                Normally about 20 people come every week, but some weeks there can be significantly more people.
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<h2>Keep in touch</h2>
+
+<div class="row">
+
+    <div class="col-md-6">
+        <a href="https://discord.gg/ArAwgeX" class="grid" style="background: #ccffcc;" target="_blank">
+            <img src="/images/discord logo.svg" width="50" height="50" />
+            <div>
+                Discord
+                <p>
+                    Join us on Discord to chat with everyone from the meetup.
+                </p>
+        </div>
+        </a>
+    </div>
+
+    <div class="col-md-6">
+        <a href="https://www.instagram.com/yotsubadublin/" class="grid" style="background: #99ff99;" target="_blank">
+            <img src="/images/instagram_logo_2016.svg" width="50" height="50" />
+            <div>
+                Instrgram
+                <p>
+                    Follow us to see images from the meetup every week.
+                </p>
+            </div>
+        </a>
+    </div>
+
+</div>
+
+@{
+    ViewData["Title"] = "Home page";
+    ViewData["lang"] = "en";
+
+    DateOnly NextSunday()
+    {
+        var now = DateTime.Now;
+
+        if (now.DayOfWeek == DayOfWeek.Sunday && now.Hour < 14)
+        {
+            return DateOnly.FromDateTime(now);
+        }
+
+        var x = now.AddDays(7 - (int)now.DayOfWeek);
+        return DateOnly.FromDateTime(x);
+    }
+}

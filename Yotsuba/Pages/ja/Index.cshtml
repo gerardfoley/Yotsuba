@@ -1,0 +1,172 @@
+﻿@page
+@using System.Globalization
+@model Yotsuba.Pages.JA.IndexModel
+
+<style>
+
+    .grid {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 20px;
+        margin: 10px;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 0 10px black;
+    }
+
+</style>
+
+<img src="/images/header2.jpg" class="rounded-25 w-100" />
+
+@{
+    var ci = new CultureInfo("ja");
+}
+
+<div class="alert alert-dark" role="alert" style="margin-top: 1em;">
+    次回のミートアップは、@NextSunday().ToString("M月dd日 (ddd)", ci)、Starbucks、 Crampton Quayで開催されます。
+</div>
+
+<div class="row">
+
+    <div class="col grid" style="background: #ccffcc;">
+
+        <img src="/images/sunday calendar.png" width="50" height="50" />
+
+        <div>毎週日曜日</div>
+
+    </div>
+
+    <div class="col grid" style="background: #99ff99;">
+
+        <img src="/images/starbucks_corporation_logo_2011.svg" width="50" height="50" />
+
+        <div>
+            Starbucks, Crampton Quay
+            <a href="https://www.google.com/maps/place/Starbucks+Crampton+Quay/@@53.346055,-6.2623945,15z/data=!4m6!3m5!1s0x48670e8412f2ca57:0x54821689825953e9!8m2!3d53.346055!4d-6.2623945!16s%2Fg%2F11btvb535v" target="_blank">地図を見ます</a>
+        </div>
+
+    </div>
+
+    <div class="col grid" style="background: #66ff66;">
+
+        <div style="display: inline-block; width: 50px; height: 50px; border-radius: 50px; background: white;">
+            <img src="/images/clock_12-30.svg" width="50" height="50" />
+        </div>
+
+        <div>12:30から</div>
+
+    </div>
+
+</div>
+
+<h1>日本語と英語のランゲージエクスチェンジ</h1>
+
+<img src="/images/yotsuba-san.jpg" style="float: right;" width="200" />
+
+<p style="font-size: 20px;">
+    私たちは、日本語と英語で行われるミートアップを毎週開いています。
+    場所はダブリンのスターバックスです。
+    多国籍な環境で日本語と英語をお互いに教えあったり、文化交流をしたり、ゲームをしたりして楽しめます。
+    英語が苦手でもだいじょうぶ！ぜひお気軽にご参加ください。
+</p>
+
+<h2>活動内容</h2>
+<p style="font-size: 20px;">
+    楽しくおしゃべりしたり、一緒にゲームを楽しんだり自由にお過ごしいただけます。
+    各種カードゲームや折り紙、マンガなどもご用意しています。
+    もしおすすめなゲームやマンガがあればぜひみんなに紹介してください。
+</p>
+
+<img src="/images/12-chureito-pagoda-and-mount-fuji-japan_(29677439878).jpg" alt="忠霊塔と富士山、日本" class="w-100 rounded-25" />
+
+<div class="row" style="margin-top: 1em;">
+    <div class="col-md-6 col-lg-3">
+        <img src="/images/Pika-ditto and Eevee in front of Pokéball.jpg" alt="モンスターボールの前のピカディットとイーブイ" class="rounded-25 w-100" />
+    </div>
+    <div class="col-md-6 col-lg-9">
+        <h1>よくある質問</h1>
+        <dl>
+            <dt>
+                ミートアップはどこで開催していますか？
+            </dt>
+            <dd>
+                Crampton Quayのスターバックスの一階で開催しています。四つ葉のサインとポケモンのぬいぐるみがあるテーブルが目印です。があるテーブルを探してください。
+            </dd>
+            <dt>
+                12:30びったりに参加する必要がありますか？
+            </dt>
+            <dd>
+                自由な時間にご参加いただけますが、人数が多い時は席が確保できない場合があります。確実に座りたい場合はお早目の参加をおすすめします。
+            </dd>
+            <dt>
+                参加予約の必要がありますか？
+            </dt>
+            <dd>
+                いいえ、予約は必要ありません。いつでもお越しください。
+            </dd>
+            <dt>
+                英語が話せませんが参加できますか？
+            </dt>
+            <dd>
+                はい、英語初心者も大歓迎です。
+            </dd>
+            <dt>
+                毎週何人ほど集まりますか？
+            </dt>
+            <dd>
+                通常は20人ほどですが、週によっては20人以上集まることもあります。
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<h2>連絡先</h2>
+
+<div class="row">
+
+    <div class="col-md-6">
+        <a href="https://discord.gg/ArAwgeX" class="grid" style="background: #ccffcc;" target="_blank">
+            <img src="/images/discord logo.svg" width="50" height="50" />
+            <div>
+                Discord
+                <p>
+                    Discordを使ってオンラインでもメンバーとチャットしましょう。
+                </p>
+        </div>
+        </a>
+    </div>
+
+    <div class="col-md-6">
+        <a href="https://www.instagram.com/yotsubadublin/" class="grid" style="background: #99ff99;" target="_blank">
+            <img src="/images/instagram_logo_2016.svg" width="50" height="50" />
+            <div>
+                Instrgram
+                <p>
+                    毎週のミートアップの様子を投稿しています。フォローお待ちしています！
+                </p>
+            </div>
+        </a>
+    </div>
+
+</div>
+
+@{
+    ViewData["Title"] = " ホームページ";
+    ViewData["lang"] = "ja";
+
+    DateOnly NextSunday()
+    {
+        var now = DateTime.Now;
+
+        if (now.DayOfWeek == DayOfWeek.Sunday && now.Hour < 14)
+        {
+            return DateOnly.FromDateTime(now);
+        }
+
+        var x = now.AddDays(7 - (int)now.DayOfWeek);
+        return DateOnly.FromDateTime(x);
+    }
+}
